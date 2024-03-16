@@ -1,0 +1,100 @@
+// ConsoleApplication1.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
+#include <iostream>
+
+class Pila{
+public:
+    
+    int elem[10];
+    int tam = 10;
+    int* top = NULL;
+    bool Push(int a) {
+        if (top > elem + tam-2) {
+            return false;
+        }
+        
+        if (top == NULL) {
+            top = elem;
+        }
+        else {
+            top++;
+        }
+        *top = a;
+       
+        return true;
+    }
+    bool Pop(int &a) {
+        if (top <elem ) {
+            return false;
+        }
+        a = *top;
+        top--;
+        return true;
+    }
+};
+
+int main()
+{
+    int a = 0;
+    Pila p;
+    p.Push(4);
+    p.Push(2);
+    p.Push(3);
+    p.Push(8);
+    p.Push(6);
+    p.Push(4);
+    p.Push(2);
+    p.Push(3);
+    p.Push(8);
+    p.Push(6);
+    p.Push(4);
+    p.Push(2);
+    p.Push(3);
+    p.Push(8);
+    p.Push(200);
+    p.Push(2);
+    p.Push(3);
+    p.Push(8);
+    p.Push(6);
+
+    /*
+    p.Pop(a);
+    
+    p.Pop(a);
+    
+    p.Pop(a);
+    
+    p.Pop(a);
+    
+    p.Pop(a);
+    
+    p.Pop(a);
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+
+    p.Pop(a);
+    */
+    p.Push(6);
+    for (int* x = p.elem; x <= p.top; x++) {
+        std::cout << *x << " ";
+    }
+}
