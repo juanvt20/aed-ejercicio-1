@@ -1,0 +1,25 @@
+#include <iostream>
+
+bool binbus(int* ini, int* fin, int* pos, int key) {
+    
+    return true;
+}
+int main()
+{
+    int a = 1;
+    const int t = 20;
+
+    int arr[t];
+    for (int* p = arr; p < arr + t; p++, a++) {
+        *p = a;
+    }
+    int* ini = arr;
+    int* fin = arr + t - 2;
+    int* pos = ini;
+    int key = 20;
+    binbus(ini,fin,pos,key);
+    
+    for (int* p = arr; p < arr + t; p++) {
+        std::cout << *p << " ";
+    }
+}
