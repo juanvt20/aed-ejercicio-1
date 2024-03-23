@@ -1,0 +1,45 @@
+
+
+#include <iostream>
+
+class node {
+public:
+    int arr[10];
+    node* next = NULL;
+    node(node* nex) {
+        next = nex;
+    }
+};
+class lista {
+public:
+    node* ini;
+    int* fin;
+    lista() {
+        ini = new node(NULL);
+        fin = ini->arr;
+        
+    }
+    void add(int v) {
+        if (fin > (ini->arr) + 9) {
+            ini->next = new node(NULL);
+
+        }
+        *fin = v;
+        fin++;
+        
+    }
+    void print() {
+        for (int* p = ini->arr; p < fin; p++) {
+            std::cout << *p << " ";
+        }
+    }
+};
+int main()
+{
+    lista l;
+    l.add(5);
+    l.add(4);
+    l.add(6);
+    l.add(8);
+    l.print();
+}
