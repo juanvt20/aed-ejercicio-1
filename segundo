@@ -1,25 +1,36 @@
 #include <iostream>
 
-bool binbus(int* ini, int* fin, int* pos, int key) {
+bool binbus(int *ini, int *fin, int *pos, int key) {
+  while (ini != fin) {
+      pos = ini + ((fin - ini) / 2);
     
-    return true;
+    if (*pos == key) {
+      return true;
+    } else {
+      if (*pos < key) {
+        ini = pos+1;
+      } else {
+        pos = ini-1;
+      }
+    }
+  }
+  return false;
 }
-int main()
-{
-    int a = 1;
-    const int t = 20;
+int main() {
+  int a = 1;
+  const int t = 20;
 
-    int arr[t];
-    for (int* p = arr; p < arr + t; p++, a++) {
-        *p = a;
-    }
-    int* ini = arr;
-    int* fin = arr + t - 2;
-    int* pos = ini;
-    int key = 20;
-    binbus(ini,fin,pos,key);
-    
-    for (int* p = arr; p < arr + t; p++) {
-        std::cout << *p << " ";
-    }
+  int arr[t];
+  for (int *p = arr; p < arr + t; p++, a++) {
+    *p = a;
+  }
+  int *ini = arr;
+  int *fin = arr + t ;
+  int *pos = ini;
+  int key = 20;
+std::cout<<binbus(ini, fin, pos, key)<<"\n";
+
+  for (int *p = arr; p < arr + t; p++) {
+    std::cout << *p << " ";
+  }
 }
